@@ -5,7 +5,7 @@ myApp.config(['$routeProvider',function($routeProvider){
     $routeProvider
 
     .when('/',{
-        templateUrl : 'index.html',
+        templateUrl : '/pages/login.html',
         controller : 'mainController'
 
     })
@@ -22,7 +22,7 @@ myApp.config(['$routeProvider',function($routeProvider){
 }]);
 
 
-myApp.controller('mainController',['$scope','$log',function($scope,$log){
+myApp.controller('mainController',['$scope','$log','$routeParams',function($scope,$log,$routeParams){
 
 
 }]);

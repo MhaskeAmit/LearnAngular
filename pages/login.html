@@ -1,10 +1,17 @@
-<Header>Login</Header>
-<div ng-controller = "LoginController">
-<label>User : </label>
-<input type = 'text' id = 'username' placeholder = 'Enter your email id'/>
+<div class="container">
+    <form name="loginForm" novalidate ng-submit="personForm.$valid &&sendForm()">
+     <div ng-controller = "LoginController">
+         <label for="uname"><b>Email ID</b></label>
+            <input type="text" name="email" ng-model="txtmail" ng-pattern="/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/" required />
 
-<label>Password : </label>
-<input type = 'password' id ='password' placeholder = 'Enter password here'>
+            <span style="color:Red" ng-show="loginForm.email.$error.required"> Required! </span>
 
-<button type = 'submit' id = 'submit'>Submit</button>
+            <span style="color:Red" ng-show="loginForm.email.$dirty&&loginForm.email.$error.pattern">Please Enter Valid Email</span>
+  <br/>
+         <label for="psw"><b>Password</b></label>
+            <input type="password" placeholder="Enter Password" name="psw" required>
+          
+            <button type="submit">Login</button>
+        </div>
+    </form>
 </div>
