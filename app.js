@@ -29,6 +29,10 @@ myApp.controller('mainController',['$scope','$log','$routeParams',function($scop
 myApp.controller('SignupController',['$scope','$log','$routeParams',function($scope,$log,$routeParams){
 
 
+    $scope.user = {
+        password: "",
+        confirmPassword: ""
+      };
 
 }]);
 myApp.controller('LoginController',['$scope','$log','$routeParams',function($scope,$log,$routeParams){
@@ -36,3 +40,22 @@ myApp.controller('LoginController',['$scope','$log','$routeParams',function($sco
 
 
 }]);
+
+myApp.directive("compareTo", function() {
+    return {
+      require: "ngModel",
+      scope: {
+        confirmPassword: "=compareTo"
+      },
+      link: function(scope, element, attributes, modelVal) {
+
+        modelVal.$validators.compareTo = function(val) {
+          return val == scope.confirmPassword;
+        };
+
+        scope.$watch("confirmPassword", function() {
+          modelVal.$validate();
+        });
+      }
+    };
+  });
