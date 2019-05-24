@@ -37,6 +37,7 @@ myApp.controller('SignupController',['$scope','$log','$routeParams',function($sc
 }]);
 myApp.controller('LoginController',['$scope','$log','$routeParams',function($scope,$log,$routeParams){
 
+  
 
 
 }]);

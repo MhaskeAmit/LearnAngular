@@ -1,5 +1,5 @@
 <div class="container">
-    <form name="loginForm" novalidate ng-submit="personForm.$valid &&sendForm()">
+    <form action="/controllers/login-controller" method="POST" name="loginForm" novalidate ng-submit="personForm.$valid &&sendForm()">
      <div ng-controller = "LoginController">
          <label for="uname"><b>Email ID</b></label>
             <input type="text" name="email" ng-model="txtmail" ng-pattern="/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/" required />

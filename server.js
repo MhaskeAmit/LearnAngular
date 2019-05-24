@@ -1,19 +1,29 @@
 var express = require("express");
-var login = require('./routes/../loginroutes');
 var bodyParser = require('body-parser');
 
+var connection = require('./config');
 var app = express();
-app.use(bodyParser.urlencoded({extended:true}));
-app.use(bodyparser.json());
 
-app.use(function(req,res,next){
-    res.header("Access-Control-Allow-Origin","*");
-    res.header("Access-Control-Allow-Headers","Origin, X-Requested-With, Content-Type,Accept");
-    next();
-});
-var router = express.Router();
 
-router.post('/signup',login.signup);
-router.post('/login',login.login);
-app.use('/api',router);
-app.listen(5000);
+var loginController =  require('./controllers/login-controller');
+var registerController = require('./controllers/register-controller');
+
+app.use(bodyParser.urlencoded({extened :true}));
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended : true}));
+app.get('/',function(req,res){
+    res.sendFile(__dirname + "/" + "index.html");
+})
+
+app.get('/login.html',function(req,res){
+    res.sendFile(__dirname + "/" + "login.html");
+})
+
+app.post('api/register', registerController.register);
+app.post('/api/login', loginController.login);
+
+console.log(loginController);
+
+app.post('/controllers/register-controller',registerController.register);
+app.post('/controllers/login-controller',loginController.login);
+app.listen(8080);
