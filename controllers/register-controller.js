@@ -26,4 +26,5 @@ module.exports.register= function(req,res){
         }
 
     });
+    return res.redirect('/pages/login.html');
 }

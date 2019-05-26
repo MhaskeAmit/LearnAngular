@@ -5,7 +5,7 @@ myApp.config(['$routeProvider',function($routeProvider){
     $routeProvider
 
     .when('/',{
-        templateUrl : '/pages/login.html',
+        templateUrl : '/pages/main_page.html',
         controller : 'mainController'
 
     })
@@ -20,7 +20,10 @@ myApp.config(['$routeProvider',function($routeProvider){
     });
 
 }]);
+myApp.controller('product',['$scope','$log','$routeParams',function($scope,$log,$routeParams){
 
+
+}]);
 
 myApp.controller('mainController',['$scope','$log','$routeParams',function($scope,$log,$routeParams){
 
