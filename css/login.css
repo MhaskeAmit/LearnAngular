@@ -2,7 +2,7 @@
 body {font-family: Arial, Helvetica, sans-serif;}
 
 /* Full-width input fields */
-input[type=text], input[type=password] {
+input[type=text], input[type=password], input[type=number], textarea {
   width: 100%;
   padding: 12px 20px;
   margin: 8px 0;
@@ -53,7 +53,7 @@ span.psw .psw1{
   background-color: rgb(0,0,0); /* Fallback color */
   background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
   padding-top: 60px;
-}
+}</div></div>
 
 /* Modal Content/Box */
 .modal-content {
@@ -104,7 +104,7 @@ span.psw .psw1{
   
 }
 
-
+</div></div>
 .ng-invalid {
   border-color: red;
   outline-color: red;

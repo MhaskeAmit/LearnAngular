@@ -17,13 +17,41 @@ myApp.config(['$routeProvider',function($routeProvider){
     .when('/login',{
         templateUrl : 'pages/login.html',
         controller : 'LoginController'
+    })
+
+    .when('/add_product',{
+      templateUrl : 'pages/add_product.html',
+      controller : 'product'
     });
 
 }]);
-myApp.controller('product',['$scope','$log','$routeParams',function($scope,$log,$routeParams){
+myApp.controller('product',['$scope','$log','$routeParams','$location',function($scope,$log,$routeParams,$location){
 
+  $scope.clicked = function(){
+    $location.path('/add_product');
+  }
 
 }]);
+
+myApp.controller('addProduct',['scope',function($scope){
+
+  $scope.val = {
+    ref = ['jpg','jpeg','png'],
+    validate : function(){
+      name = file.name | lowercase;
+      length = name.length();
+      ext = name.LastIndexOf(".")+1;
+      ext1 = name.substring(ext,length);
+
+      for(k=0;k<=0;k++){
+        if(ref[k]==ext1){
+          return 'valid';
+        }
+      }
+    }
+  }
+
+}])
 
 myApp.controller('mainController',['$scope','$log','$routeParams',function($scope,$log,$routeParams){
 

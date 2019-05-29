@@ -1,17 +1,28 @@
-<div controller = ''>
+<div controller = 'addProduct'>
     <form name = "addProduct">
+    <div>
         <label>Product Name</label>
         <input type= 'text' name='prod_name' placeholder='Enter product name' required/>
-
+    </div>
+        
+    <div>
         <label>Product Image</label>
-        <input type="file" name="prod_pic" id="fileToUpload" required>
+        <input type="file" name="prod_pic" id="fileToUpload" ng-model='fil.name' required>
+        <h1>File is {{val.validate()}}</h1>
+        <p ng-bind = 'val.validate()'></p>
+    </div>
 
-        <label>Information</label>
-        <textarea type= 'text' name='prod_information' placeholder='Enter product name' required>
-            
+    <div>
+        <label>Information</label><br />
+        <textarea type= 'text' name='prod_information' placeholder='Enter product name' required></textarea>
+    </div>
+
+    <div>
         <label>Price</label>
         <input type='number' name=prod_price placeholder="Enter price" required>
-
+    </div>
+    <div>
         <button type="submit">Submit</button>
+    </div>
     </form>
 </div>
